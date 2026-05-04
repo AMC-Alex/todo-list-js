@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To do list App</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section class="app">
+      <h1>To Do list</h1>
+      <div class="input-container">
+        <input type="text" placeholder="Agregar tarea" class="input-task" />
+        <button class="addTask" data-action="add">Add</button>
+      </div>
+      <select name="" id="selectFilter">
+        <option value="all">All</option>
+        <option value="pending">Pending</option>
+        <option value="completed">Completed</option>
+      </select>
+      <ul class="list"></ul>
+    </section>
+
+    <script src="app.js"></script>
+  </body>
+</html>
