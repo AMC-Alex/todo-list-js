@@ -1,26 +1,40 @@
-Aplicación de lista de tareas hecha con JavaScript Vanilla (sin frameworks), enfocada en manipulación del DOM y manejo de estado.
+# To-Do List App
 
-⚙️ Funcionalidades actuales
+Aplicación web simple para gestionar tareas diarias.  
+Este proyecto forma parte de mi proceso de aprendizaje en JavaScript.
 
-Agregar tareas
-Eliminar tareas
-Filtrar tareas
-Render dinámico
+## 🚀 Funcionalidades
 
-🚧 En progreso
+- Agregar tareas
+- Eliminar tareas
+- Filtrar tareas
 
-Editar tareas
-Persistencia con localStorage
-
-🧠 Lo que practicaste
-
-Eventos (delegación)
-Manipulación del DOM
-Estructura de datos (arrays/objetos)
-Separación lógica vs UI (aunque estés en proceso)
-
-##Tecnologías
+## 🛠️ Tecnologías utilizadas
 
 - HTML
 - CSS
-  JavaScript
+- JavaScript (Vanilla)
+
+## 📌 Estado del proyecto
+
+Versión actual: **v1**
+
+Funcionalidades pendientes:
+
+- Editar tareas
+- Persistencia con localStorage
+
+## 🎯 Objetivo
+
+Mejorar la separación entre lógica y manipulación del DOM, así como aplicar buenas prácticas en JavaScript.
+
+## 📷 Demo (opcional)
+
+_(puedes agregar una imagen o gif aquí más adelante)_
+
+## 📦 Instalación
+
+```bash
+git clone https://github.com/AMC-Alex/todo-list-js.git
+cd Todo_list_js
+```
