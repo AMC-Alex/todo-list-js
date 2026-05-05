@@ -28,10 +28,6 @@ Funcionalidades pendientes:
 
 Mejorar la separación entre lógica y manipulación del DOM, así como aplicar buenas prácticas en JavaScript.
 
-## 📷 Demo (opcional)
-
-_(puedes agregar una imagen o gif aquí más adelante)_
-
 ## 📦 Instalación
 
 ```bash
