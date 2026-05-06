@@ -13,7 +13,7 @@ app.addEventListener("click", (event) => {
 
   if (isCheckbox) {
     const li = event.target.closest("[data-id]");
-    const id = li.dataset.id;
+    const id = Number(li.dataset.id);
     toggleTask(id);
 
     return;
@@ -23,21 +23,48 @@ app.addEventListener("click", (event) => {
 
   const btnAction = elementAction.dataset.action;
 
+  function dataId() {
+    const li = elementAction.closest("[data-id]");
+    const id = Number(li.dataset.id);
+    return id;
+  }
+
   switch (btnAction) {
     case "add":
       handleTask();
       break;
 
     case "delete":
-      const li = elementAction.closest("[data-id]");
-      const id = li.dataset.id;
-      deleteTask(id);
+      deleteTask(dataId());
       break;
 
     case "edit":
-      const li = elementAction.closest("[data-id]");
-      const id = li.dataset.id;
+      editTask(dataId());
       break;
+  }
+});
+
+app.addEventListener("keydown", (event) => {
+  const isEditInput = event.target.matches(".inputEdit");
+
+  if (isEditInput && event.key === "Enter") {
+    const li = event.target.closest("[data-id]");
+    const id = Number(li.dataset.id);
+
+    const newText = event.target.value.trim();
+
+    data = data.map((task) => {
+      if (task.id === id) {
+        return {
+          ...task,
+          text: newText || task.text,
+          isEditing: false,
+        };
+      }
+      return task;
+    });
+
+    render();
   }
 });
 
@@ -54,6 +81,7 @@ function addTask(text) {
     id: Date.now(),
     text: text,
     state: false,
+    isEditing: false,
   };
 
   data.push(getData);
@@ -61,12 +89,14 @@ function addTask(text) {
 }
 
 function deleteTask(id) {
-  data = data.filter((task) => task.id !== Number(id));
+  data = data.filter((task) => task.id !== id);
   render();
 }
 
 function editTask(id) {
-  
+  data = data.map((task) => {
+    return task.id === id ? { ...task, isEditing: !task.isEditing } : task;
+  });
   render();
 }
 
@@ -92,15 +122,22 @@ function render() {
 
   tasks.forEach((task) => {
     const li = document.createElement("li");
+    let content;
+    if (task.isEditing) {
+      content = `<input type="text" value = "${task.text}" class ="inputEdit"/>`;
+    } else {
+      content = `<span class = "${task.state ? "completed" : ""}">${task.text}</span>`;
+    }
+
     li.dataset.id = task.id;
     li.innerHTML = `
     <input type= "checkbox" ${task.state ? "checked" : ""}/>
-    <span class = "${task.state ? "completed" : ""}">${task.text}</span>
+    ${content}
     <div class="button-content">
         <button data-action ="edit" class="btn-edit" >Edit</button>
         <button data-action ="delete" class="btn-delete" >Delete</button>
     </div>
-    
+
     `;
 
     list.appendChild(li);
