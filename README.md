@@ -31,7 +31,7 @@ Proyecto desarrollado como parte de mi aprendizaje en JavaScript y manipulación
 
 ## 📌 Estado del proyecto
 
-Versión actual: **v2**
+Versión actual: **v0.3**
 
 ## 🔮 Próximas mejoras
 
