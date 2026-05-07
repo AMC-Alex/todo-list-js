@@ -4,8 +4,13 @@ const list = document.querySelector(".list");
 
 const filtered = document.querySelector("#selectFilter");
 
-let data = [];
 let currentFilter = "all";
+
+let data = JSON.parse(localStorage.getItem("Tasks")) || [];
+
+function saveTasks() {
+  localStorage.setItem("Tasks", JSON.stringify(data));
+}
 
 app.addEventListener("click", (event) => {
   const elementAction = event.target.closest("[data-action]");
@@ -65,6 +70,7 @@ app.addEventListener("keydown", (event) => {
     });
 
     render();
+    saveTasks();
   }
 });
 
@@ -86,11 +92,13 @@ function addTask(text) {
 
   data.push(getData);
   render();
+  saveTasks();
 }
 
 function deleteTask(id) {
   data = data.filter((task) => task.id !== id);
   render();
+  saveTasks();
 }
 
 function editTask(id) {
@@ -102,7 +110,7 @@ function editTask(id) {
 
 function toggleTask(id) {
   data = data.map((task) => {
-    return task.id === Number(id) ? { ...task, state: !task.state } : task;
+    return task.id === id ? { ...task, state: !task.state } : task;
   });
   render();
 }

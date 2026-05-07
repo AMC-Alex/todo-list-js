@@ -1,55 +1,47 @@
 # To-Do List App
 
-Aplicación web para gestionar tareas diarias, desarrollada con JavaScript puro (sin frameworks).
-Este proyecto forma parte de mi proceso de aprendizaje enfocado en manipulación del DOM y organización del código.
-
----
+Aplicación web para gestionar tareas diarias.  
+Proyecto desarrollado como parte de mi aprendizaje en JavaScript y manipulación del DOM.
 
 ## 🚀 Funcionalidades
 
-* Agregar tareas
-* Eliminar tareas
-* Editar tareas ✅
-* Filtrar tareas
-
----
+- Agregar tareas
+- Editar tareas
+- Eliminar tareas
+- Marcar tareas como completadas
+- Filtrar tareas
+- Persistencia de datos con localStorage
 
 ## 🛠️ Tecnologías utilizadas
 
-* HTML
-* CSS
-* JavaScript (Vanilla)
+- HTML5
+- CSS3
+- JavaScript (Vanilla)
 
----
+## 📚 Conceptos practicados
+
+- Manipulación del DOM
+- Delegación de eventos
+- Arrays y objetos
+- Renderizado dinámico
+- Manejo de estado
+- localStorage
+- Funciones reutilizables
+- Eventos y formularios
 
 ## 📌 Estado del proyecto
 
-Versión actual: **v0.2**
+Versión actual: **v2**
 
-Funcionalidades pendientes:
+## 🔮 Próximas mejoras
 
-* Persistencia con localStorage
+- Mejor separación entre lógica y DOM
+- Estructurar el proyecto en módulos
+- Mejorar nombres y organización del código
+- Optimizar renderizado
+- Añadir validaciones
+- Mejorar experiencia de usuario y diseño responsive
 
----
+## 🎯 Objetivo del proyecto
 
-## 🎯 Objetivos de aprendizaje
-
-* Mejorar la separación entre lógica y manipulación del DOM
-* Implementar manejo de estado más claro
-* Escribir código más modular y mantenible
-
----
-
-## 📦 Instalación
-
-```bash
-git clone https://github.com/AMC-Alex/todo-list-js.git
-cd todo-list-js
-```
-
----
-
-## 🧠 Notas
-
-Este proyecto se está desarrollando por versiones para simular un flujo de trabajo real.
-Cada mejora se implementa de forma incremental siguiendo buenas prácticas de desarrollo.
+Seguir mejorando mis habilidades en JavaScript construyendo proyectos cada vez más organizados, escalables y cercanos a un entorno real de desarrollo frontend.
